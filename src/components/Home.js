@@ -1,10 +1,13 @@
+import TeamsIndex from "./teams/TeamsIndex"
+
 const Home = (props) => {
-	// const { msgAlert, user } = props
+	const { msgAlert } = props
 	console.log('props in home', props)
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>Sentai Homepage</h2>
+            <TeamsIndex msgAlert={ msgAlert } />
 		</>
 	)
 }

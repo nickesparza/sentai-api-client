@@ -13,6 +13,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
+import ShowTeam from './components/teams/ShowTeam'
+
 const App = () => {
 
   const [user, setUser] = useState(null)
@@ -44,7 +46,10 @@ const App = () => {
 			<Fragment>
 				<Header user={user} />
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route
+                        path='/'
+                        element={<Home msgAlert={msgAlert} user={user} />}
+                    />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -53,21 +58,25 @@ const App = () => {
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 					/>
-          <Route
-            path='/sign-out'
-            element={
-              <RequireAuth user={user}>
-                <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/change-password'
-            element={
-              <RequireAuth user={user}>
-                <ChangePassword msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
-          />
+                <Route
+                    path='/sign-out'
+                    element={
+                    <RequireAuth user={user}>
+                        <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+                    </RequireAuth>
+                    }
+                />
+                <Route
+                    path='/change-password'
+                    element={
+                    <RequireAuth user={user}>
+                        <ChangePassword msgAlert={msgAlert} user={user} />
+                    </RequireAuth>}
+                />
+                <Route
+                    path='/teams/:id'
+                    element={<ShowTeam msgAlert={msgAlert} user={user}/>}
+                />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
