@@ -26,6 +26,14 @@ export const createTeam = (info) => {
 	})
 }
 
+export const deleteTeam = (event) => {
+    console.log('this is what is getting passed in', event)
+    return axios({
+        method: 'DELETE',
+        url: apiUrl + `/teams/${event}`
+    })
+}
+
 // update team route - PATCH
 
 // delete team route - DELETE

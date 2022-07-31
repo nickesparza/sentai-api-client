@@ -6,6 +6,8 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
+    createTeamSuccess: 'Successfully created your Sentai Team!',
+    createTeamFailure: 'Failed to create team. Try again.',
     getTeamsFailure: 'Failed to load list of teams.',
     getTeamFailure: 'Couldn\'t find a team with that name.',
 }

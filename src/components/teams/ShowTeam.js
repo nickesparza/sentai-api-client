@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { getOneTeam } from "../../api/teams"
+import { getOneTeam, deleteTeam } from "../../api/teams"
 import messages from "../shared/AutoDismissAlert/messages"
 import LoadingScreen from "../shared/LoadingScreen"
 import { Card, Container } from "react-bootstrap"
@@ -25,6 +25,11 @@ const ShowTeam = (props) => {
     // eslint-disable-next-line
     }, [])
 
+    const onDelete = () => {
+        deleteTeam(id)
+            .then(navigate('/'))
+    }
+
     if (!team) {
         return <LoadingScreen/>
     }
@@ -40,6 +45,8 @@ const ShowTeam = (props) => {
                         <div><small>Colors: {team.colors.join(", ")}</small></div>
                         <div><small>Member Count: {team.memberCount}</small></div>
                         <div><small>This show originally aired in the {team.era} era.</small></div>
+                        <div><small>Team ID: {team.id}</small></div>
+                        <button onClick={ onDelete }>Delete Team</button>
                     </Card.Body>
                 </Card>
             </Container>

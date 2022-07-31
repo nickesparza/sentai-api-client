@@ -14,6 +14,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
 import ShowTeam from './components/teams/ShowTeam'
+import CreateTeam from './components/teams/CreateTeam'
 
 const App = () => {
 
@@ -76,6 +77,14 @@ const App = () => {
                 <Route
                     path='/teams/:id'
                     element={<ShowTeam msgAlert={msgAlert} user={user}/>}
+                />
+                <Route
+                    path='teams/create-team'
+                    element={
+                    // <RequireAuth user={user}>
+                        <CreateTeam msgAlert={msgAlert} user={user}/>
+                    // </RequireAuth>
+                    }
                 />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
