@@ -29,11 +29,6 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
 	<>
         <Nav.Link>
-            <Link to='teams/create-team' style={linkStyle}>
-                Create Team
-            </Link>
-        </Nav.Link>
-        <Nav.Link>
 		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
         </Nav.Link>
         <Nav.Link>

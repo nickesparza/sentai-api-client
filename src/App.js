@@ -82,14 +82,18 @@ const App = () => {
                 <Route
                     path='teams/create-team'
                     element={
-                    // <RequireAuth user={user}>
+                    <RequireAuth user={user}>
                         <CreateTeam msgAlert={msgAlert} user={user}/>
-                    // </RequireAuth>
+                    </RequireAuth>
                     }
                 />
                 <Route
                     path='teams/:id/edit'
-                    element={<EditTeam msgAlert={msgAlert} user={user}/>}
+                    element={
+                    <RequireAuth user={user}>
+                        <EditTeam msgAlert={msgAlert} user={user}/>
+                    </RequireAuth>
+                    }
                 />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (

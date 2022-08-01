@@ -50,6 +50,8 @@ different components for user actions.
 |------------------|-------------------|-------|----|
 | `/teams`       | `GET`    | No | Index |
 | `/teams/:id`       | `GET`    | No | Show |
+| `/teams/new` | `GET` | Yes | New
 | `/teams` | `POST` | Yes | Create |
-| `/teams/:id/edit` | `PATCH`  | Yes | Update |
+| `/teams/:id/edit` | `GET`  | Yes | Edit |
+| `/teams/:id` | `PATCH` | Yes | Update
 | `/teams/:id`        | `DELETE`   | Yes | Delete |
