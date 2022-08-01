@@ -10,6 +10,8 @@ const messages = {
     createTeamFailure: 'Failed to create team. Try again.',
     updateTeamSuccess: 'Successfully updated your Sentai team!',
     updateTeamFailure: 'Failed to update team. Try again.',
+    deleteTeamSuccess: 'Your team was deleted.',
+    deleteTeamFailure: 'Failed to delete team. Try again.',
     getTeamsFailure: 'Failed to load list of teams.',
     getTeamFailure: 'Couldn\'t find a team with that name.',
 }

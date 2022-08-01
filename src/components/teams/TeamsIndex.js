@@ -9,6 +9,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 const TeamsIndex = (props) => {
     const [teams, setTeams] = useState(null)
     const [error, setError] = useState(false)
+    // const [updated, setUpdated] = useState(false)
 
     // when there is an error, call this and pass its arguments
     const { msgAlert } = props

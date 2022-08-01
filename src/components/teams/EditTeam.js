@@ -11,7 +11,7 @@ const EditTeam = (props) => {
     const { id } = useParams()
     const navigate = useNavigate()
     // this gets the msgAlert function from the last page. it is NOT in the params
-    const { msgAlert } = props
+    const { msgAlert, user } = props
     const [team, setTeam] = useState({
         teamName: '',
         colors: '',
@@ -54,11 +54,11 @@ const EditTeam = (props) => {
 		event.preventDefault()
         console.log('this is the event', event)
 
-		updateTeam(team)
+		updateTeam(user, team)
 			.then(() =>
 				msgAlert({
 					heading: 'Team Successfully Updated',
-					message: messages.createTeamSuccess,
+					message: messages.updateTeamSuccess,
 					variant: 'success',
 				})
 			)

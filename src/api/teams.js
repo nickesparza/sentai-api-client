@@ -11,27 +11,33 @@ export const getOneTeam = (id) => {
 }
 
 // create team call - POST
-export const createTeam = (info) => {
+export const createTeam = (user, newTeam) => {
 	return axios({
 		method: 'POST',
 		url: apiUrl + '/teams',
+        headers: {
+			Authorization: `Token token=${user.token}`,
+		},
 		data: {
             team: {
-                teamName: info.teamName,
-                colors: info.colors.split(", "),
-                memberCount: info.memberCount,
-                series: info.series
+                teamName: newTeam.teamName,
+                colors: newTeam.colors.split(", "),
+                memberCount: newTeam.memberCount,
+                series: newTeam.series
             }
         },
 	})
 }
 
 // update team call - PATCH
-export const updateTeam = (info) => {
+export const updateTeam = (user, info) => {
     // console.log('this is what it getting passed into patch', info)
     return axios({
         method: 'PATCH',
         url: apiUrl + `/teams/${info.id}`,
+        headers: {
+			Authorization: `Token token=${user.token}`,
+		},
         data: {
             team: {
                 teamName: info.teamName,
@@ -44,11 +50,14 @@ export const updateTeam = (info) => {
 }
 
 // delete team call - DELETE
-export const deleteTeam = (id) => {
-    console.log('this is what is getting passed in', id)
+export const deleteTeam = (user, teamId) => {
+    console.log('this is what is getting passed in', teamId)
     return axios({
         method: 'DELETE',
-        url: apiUrl + `/teams/${id}`
+        url: apiUrl + `/teams/${teamId}`,
+        headers: {
+			Authorization: `Token token=${user.token}`,
+		}
     })
 }
 

@@ -13,6 +13,8 @@ const CreateTeam = (props) => {
         series: ''
     })
 
+    const {user, msgAlert} = props
+
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -32,10 +34,10 @@ const CreateTeam = (props) => {
     const onCreate = (event) => {
 		event.preventDefault()
         console.log('this is the event', event)
-		const { msgAlert } = props
+		
 
-		createTeam(team)
-            .then(navigate(`/`))
+		createTeam(user, team)
+            .then(res => navigate(`/teams/${res.data.team.id}`))
 			.then(() =>
 				msgAlert({
 					heading: 'Team Created',

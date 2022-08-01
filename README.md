@@ -35,9 +35,21 @@ make it easier to make changes at the component level.
 This template comes with a handful of front-end routes that display
 different components for user actions.
 
+#### User Routes
+
 | Endpoint         | Component | `AuthenticatedRoute`? |
 |------------------|-------------------|-------|
 | `/sign-up`       | `SignUp`    | No |
 | `/sign-in`       | `SignIn`    | No |
 | `/change-password` | `ChangePassword`  | Yes |
 | `/sign-out`        | `SignOut`   | Yes |
+
+#### Team Routes
+
+| Endpoint         | HTTP Verb | `AuthenticatedRoute`? | REST Description
+|------------------|-------------------|-------|----|
+| `/teams`       | `GET`    | No | Index |
+| `/teams/:id`       | `GET`    | No | Show |
+| `/teams` | `POST` | Yes | Create |
+| `/teams/:id/edit` | `PATCH`  | Yes | Update |
+| `/teams/:id`        | `DELETE`   | Yes | Delete |
