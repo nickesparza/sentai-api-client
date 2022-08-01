@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { getOneTeam, deleteTeam } from "../../api/teams"
 import messages from "../shared/AutoDismissAlert/messages"
 import LoadingScreen from "../shared/LoadingScreen"
@@ -7,8 +7,7 @@ import { Card, Container } from "react-bootstrap"
 
 const ShowTeam = (props) => {
     const [team, setTeam] = useState(null)
-    const { id } = useParams()
-    const {msgAlert} = props
+    const { id, msgAlert } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -45,7 +44,9 @@ const ShowTeam = (props) => {
                         <div><small>Colors: {team.colors.join(", ")}</small></div>
                         <div><small>Member Count: {team.memberCount}</small></div>
                         <div><small>This show originally aired in the {team.era} era.</small></div>
-                        <div><small>Team ID: {team.id}</small></div>
+                        <Link to={`/teams/${team.id}/edit`} team={team}>
+                            Edit this team
+                        </Link>
                         <button onClick={ onDelete }>Delete Team</button>
                     </Card.Body>
                 </Card>

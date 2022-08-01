@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { createTeam } from '../../api/teams'
 import messages from '../shared/AutoDismissAlert/messages'
 import { useNavigate } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
 
 const CreateTeam = (props) => {
     const [team, setTeam] = useState({
@@ -58,7 +59,14 @@ const CreateTeam = (props) => {
 	}
 
     return (
-        <TeamForm team={team} handleChange={handleChange} onCreate={onCreate}/>
+        <Container>
+        <div className='row'>
+                <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+                    <h1>Create a Sentai Team</h1>
+                </div>
+            </div>
+        <TeamForm team={team} handleChange={handleChange} onSubmit={onCreate}/>
+        </Container>
     )
 }
 

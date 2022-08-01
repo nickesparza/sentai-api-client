@@ -3,14 +3,13 @@ import Button from 'react-bootstrap/Button'
 
 const TeamForm = (props) => {
     // get the state of a pet from the container component from the props
-    const { team, handleChange, onCreate } = props
+    const { team, handleChange, onSubmit } = props
 
     return (
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Create a Sentai Team</h3>
                 <small>Fields with a * are required.</small>
-                <Form onSubmit={onCreate}>
+                <Form onSubmit={onSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='name'>Team Name*</Form.Label>
                         <Form.Control
