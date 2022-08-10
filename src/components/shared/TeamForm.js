@@ -20,8 +20,6 @@ const TeamForm = (props) => {
                             placeholder='Enter name'
                             onChange={ handleChange }
                         />
-                    </Form.Group>
-                    <Form.Group>
                         <Form.Label htmlFor='colors'>Colors*</Form.Label>
                         <Form.Control
                             required
@@ -31,19 +29,6 @@ const TeamForm = (props) => {
                             placeholder='Enter suit colors separated by a comma'
                             onChange={ handleChange }
                         />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label htmlFor='memberCount'># of Members*</Form.Label>
-                        <Form.Control
-                            required
-                            name='memberCount'
-                            value={team.memberCount}
-                            type='number'
-                            placeholder='Enter number of members'
-                            onChange={ handleChange }
-                        />
-                    </Form.Group>
-                    <Form.Group>
                         <Form.Label htmlFor='series'>Series No.*</Form.Label>
                         <Form.Control
                             required
@@ -54,7 +39,6 @@ const TeamForm = (props) => {
                             onChange={ handleChange }
                         />
                     </Form.Group>
-                    
                     <Button variant='primary' type='submit'>
                         Submit
                     </Button>

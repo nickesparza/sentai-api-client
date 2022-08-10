@@ -16,6 +16,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowTeam from './components/teams/ShowTeam'
 import CreateTeam from './components/teams/CreateTeam'
 import EditTeam from './components/teams/EditTeam'
+import MyTeamsIndex from './components/teams/MyTeamsIndex'
 
 const App = () => {
 
@@ -60,6 +61,14 @@ const App = () => {
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 					/>
+                    <Route
+                        path='/my-teams'
+                        element={
+                        <RequireAuth>
+                            <MyTeamsIndex msgAlert={msgAlert} user={user} />
+                        </RequireAuth>
+                        }
+                    />
                 <Route
                     path='/sign-out'
                     element={

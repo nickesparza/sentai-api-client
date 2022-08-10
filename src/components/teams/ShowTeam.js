@@ -26,7 +26,7 @@ const ShowTeam = (props) => {
     }, [])
 
     const onDelete = () => {
-        deleteTeam(id)
+        deleteTeam(user, id)
             .then(() => {
                 msgAlert({
                     heading: 'Success',

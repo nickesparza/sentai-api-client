@@ -13,6 +13,11 @@ const authenticatedOptions = (
                 Create Team
             </Link>
         </Nav.Link>
+        <Nav.Link>
+            <Link to='my-teams' style={linkStyle}>
+                My Teams
+            </Link>
+        </Nav.Link>
 		<Nav.Link>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
