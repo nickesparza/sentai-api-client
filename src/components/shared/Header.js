@@ -53,8 +53,8 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='primary' variant='dark' expand='md'>
-		<Navbar.Brand>
+	<Navbar bg='danger' variant='dark' expand='md'>
+		<Navbar.Brand className='mx-2'>
             <Link to='/' style={linkStyle}>
                 Super SentAPI
             </Link>

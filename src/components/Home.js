@@ -6,7 +6,7 @@ const Home = (props) => {
 
 	return (
 		<>
-			<h2>Sentai Homepage</h2>
+            <div style={{textAlign: 'center'}}><h2>Super SentAPI Home</h2></div>
             <TeamsIndex msgAlert={ msgAlert } />
 		</>
 	)

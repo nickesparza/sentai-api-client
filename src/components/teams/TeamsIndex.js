@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import LoadingScreen from '../shared/LoadingScreen'
-import Card from 'react-bootstrap/Card'
+import { Container, Table } from 'react-bootstrap'
 import { getAllTeams } from '../../api/teams'
 import { Link } from 'react-router-dom'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -40,28 +40,21 @@ const TeamsIndex = (props) => {
     }
 
     const allTeams = teams.map(team => (
-        <Card style={{width: '24rem', margin: 7}} key={team.id}>
-            <Card.Header>{ team.teamName }</Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    <Link to={`teams/${team.id}`}>View {team.teamName}</Link>
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <tr key={team.id}>
+            <td>{team.teamName}</td>
+            <td><Link to={`teams/${team.id}`}>View</Link></td>
+        </tr>
     ))
-    
-    // style for the card containers
-    const cardContainerStyle = {
-        display: 'flex',
-        flexFlow: 'row wrap',
-        justifyContent: 'center',
-    }
 
     return (
         <>
-        <div style={cardContainerStyle}>
-            {allTeams}
-        </div>
+        <Container>
+            <Table striped bordered hover variant='dark'>
+                <tbody>
+                    {allTeams}
+                </tbody>
+            </Table>
+        </Container>
         </>
     )
 }
