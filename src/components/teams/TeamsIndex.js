@@ -16,6 +16,12 @@ const TeamsIndex = (props) => {
     useEffect(() => {
         console.log('useEffect has run once on load')
         getAllTeams()
+            .then(res => {
+                res.data.teams = res.data.teams.sort((a, b) => {
+                    return a.series - b.series
+                })
+                return res
+            })
             .then(res => setTeams(res.data.teams))
             .catch(err => {
                 msgAlert({
@@ -48,7 +54,7 @@ const TeamsIndex = (props) => {
 
     return (
         <>
-        <Container>
+        <Container style={{backgroundColor: 'black'}}>
             <Table striped bordered hover variant='dark'>
                 <tbody>
                     {allTeams}
