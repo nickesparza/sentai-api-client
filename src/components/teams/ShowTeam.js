@@ -12,8 +12,10 @@ const ShowTeam = (props) => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        console.log('this is the id in ShowTeam, from useParams', id)
         getOneTeam(id)
             .then(response => setTeam(response.data.team))
+            .then(console.log(team))
             .catch(err => {
                 msgAlert({
                     heading: "Can't find Team",

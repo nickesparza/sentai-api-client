@@ -48,7 +48,7 @@ const TeamsIndex = (props) => {
     const allTeams = teams.map(team => (
         <tr key={team.id}>
             <td>{team.teamName}</td>
-            <td><Link to={`teams/${team.id}`}>View</Link></td>
+            <td><Link to={`teams/${team.series}`}>View</Link></td>
         </tr>
     ))
 

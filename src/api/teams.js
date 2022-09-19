@@ -7,6 +7,7 @@ export const getAllTeams = () => {
 }
 
 export const getOneTeam = (id) => {
+    console.log(`this is the id being sent:`, id)
     return axios(`${apiUrl}/teams/${id}`)
 }
 
